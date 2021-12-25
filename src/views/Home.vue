@@ -4,6 +4,7 @@
     <section class="session-left">
       <nav id="navbar">
         <PhotoProfile/>
+        <p class="logo">NataZap</p>
         <div class="icons">
           <span alt="mensagem" class="icon message" />
           <span alt="mensagem" class="icon options" />
@@ -11,11 +12,39 @@
       </nav>
 
       <div class="input-search">
-        <input type="text" placeholder="Busque seu campo" class="main-input">
+        <input type="text" placeholder="Pesquise uma conversa" class="main-input">
       </div>
 
       <div class="chats">
-        <chat/>
+        <card-chat/>
+        <card-chat/>
+        <card-chat/>
+        <card-chat/>
+        <card-chat/>
+        <card-chat/>
+        <card-chat/>
+        <card-chat/>
+        <card-chat/>
+        <card-chat/>
+        <card-chat/>
+        <card-chat/>
+        <card-chat/>
+        <card-chat/>
+        <card-chat/>
+        <card-chat/>
+        <card-chat/>
+        <card-chat/>
+        <card-chat/>
+        <card-chat/>
+        <card-chat/>
+        <card-chat/>
+        <card-chat/>
+        <card-chat/>
+        <card-chat/>
+        <card-chat/>
+        <card-chat/>
+        <card-chat/>
+        <card-chat/>
       </div>
     </section>
 
@@ -41,18 +70,20 @@
 
 <script>
 import PhotoProfile from '@/components/PhotoProfile.vue'
-import Chat from '@/components/Chat.vue'
+import CardChat from '@/components/CardChat.vue'
 
 export default {
   name: 'Home',
   components: {
     PhotoProfile,
-    Chat
+    CardChat
   }
 }
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Moo+Lah+Lah&display=swap');
+
   .home {
     display: grid;
     grid-template-columns: 300px 1fr;
@@ -69,15 +100,15 @@ export default {
   .session-left {
     display: flex;
     flex-direction: column;
-    border-right: 1px solid rgb(151, 150, 150);
   }
 
   #navbar {
     height: 35px;
     padding: 5px 10px;
     margin-bottom: 10px;
-    box-shadow: 0 2px 0px rgba(222, 222, 223, 0.5);
-    background-color: #FFF;
+    box-shadow: 0 1px 0px rgba(10, 20, 30, 0.3);
+    background-color: #D3D3D3;
+    border-radius: 2px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -133,25 +164,28 @@ export default {
     text-align: center;
     cursor: pointer;
     transition: all .3s;
+    background-color: #D3D3D3;
   }
 
   .main-input:hover,
   .main-input:focus {
     transform: scale(1.1);
     box-shadow: 0 1px 3px rgba(10, 20, 30, .3);
+    border: none;
   }
 
-/* Chats */
-.chats {
-  display: flex;
-  flex-direction: column;
-  width: 94%;
-  padding: 3px;
-  max-height: 500px;
-  overflow: auto;
-  background-color: #363636;
-  margin-top: 10px;
-}
+  /* Chats */
+  .chats {
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+    padding: 3px;
+    max-height: 500px;
+    overflow: auto;
+    background-color: #363636;
+    margin-top: 10px;
+    border-top: 1px solid #808080;
+  }
 
 
 /* Scroll */
@@ -163,17 +197,21 @@ export default {
 
   /* Works on Chrome, Edge, and Safari */
   *::-webkit-scrollbar {
-    width: 10px;
+    width: 3px;
   }
 
   *::-webkit-scrollbar-track {
-    background: #C0C0C0;
+    background: #363636;
     border-radius: 20px;
   }
 
   *::-webkit-scrollbar-thumb {
     background-color: #696969;
-    border-radius: 20px;
-    border: 3px solid #A9A9A9;
   }
+
+/* Logo */
+.logo {
+  font-family: 'Moo Lah Lah', Arial, Helvetica, sans-serif;
+  font-size: 22px;
+}
 </style>
