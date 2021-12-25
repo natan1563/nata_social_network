@@ -4,7 +4,7 @@
     <section class="session-left">
       <nav id="navbar">
         <PhotoProfile/>
-        <p class="logo">NataZap</p>
+        <p class="logo">NatãZap</p>
         <div class="icons">
           <span alt="mensagem" class="icon message" />
           <span alt="mensagem" class="icon options" />
