@@ -49,34 +49,21 @@
     </section>
 
     <!-- Right -->
-    <section>
-      <nav>
-        Topo
-      </nav>
-
-      <div>
-        Corpo
-      </div>
-
-      <footer>
-        <i>Icone 1</i>
-        <i>Icone 2</i>
-        <input type="text" class="inputMessage">
-        <i>Microfone</i>
-      </footer>
-    </section>
+    <SelectedChat />
   </div>
 </template>
 
 <script>
 import PhotoProfile from '@/components/PhotoProfile.vue'
 import CardChat from '@/components/CardChat.vue'
+import SelectedChat from '@/components/SelectedChat.vue'
 
 export default {
   name: 'Home',
   components: {
     PhotoProfile,
-    CardChat
+    CardChat,
+    SelectedChat
   }
 }
 </script>
@@ -86,10 +73,12 @@ export default {
 
   .home {
     display: grid;
-    grid-template-columns: 300px 1fr;
-    background-color: #363636;
-    height: 100vh;
-    width: 100%;
+    grid-template-columns: 350px 1fr;
+    max-height: 100vmin;
+    max-width: 1950px;
+    margin: 10px auto 0 auto;
+    background: url('../assets/image/background/bg_chat.svg') repeat top;
+    box-shadow: 0 2px 4px rgba(21, 29, 37, 0.3);
   }
 
   /* Navbar */
@@ -138,6 +127,7 @@ export default {
     width: 16px;
     height: 16px;
     cursor: pointer;
+    transition: all .3s;
   }
 
   .icon:nth-child(1n) {
@@ -168,7 +158,8 @@ export default {
   }
 
   .main-input:hover,
-  .main-input:focus {
+  .main-input:focus,
+  .icon:hover {
     transform: scale(1.1);
     box-shadow: 0 1px 3px rgba(10, 20, 30, .3);
     border: none;
@@ -180,7 +171,7 @@ export default {
     flex-direction: column;
     width: 98%;
     padding: 3px;
-    max-height: 500px;
+    max-height: 85vmin;
     overflow: auto;
     background-color: #363636;
     margin-top: 10px;
@@ -212,6 +203,6 @@ export default {
 /* Logo */
 .logo {
   font-family: 'Moo Lah Lah', Arial, Helvetica, sans-serif;
-  font-size: 22px;
+  font-size: 24px;
 }
 </style>
