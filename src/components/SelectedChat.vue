@@ -10,76 +10,23 @@
      </header>
 
       <main>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
-        <p>Corpo</p>
+        <card-message />
       </main>
 
       <footer>
         <div id="left-icons">
-          <i id="emote"></i>
-          <i id="clip"></i>
+          <i id="emote" title="Emote" alt="Emote"></i>
+          <i id="clip" title="Anexar" alt="Anexar"></i>
         </div>
-
-        <input type="text" class="input-message">
-
-        <i id="microphone"></i>
+        <input type="text" class="input-message" alt="Pesquisar" placeholder="Digite uma mensagem...">
+        <i id="microphone" title="Audio" alt="Audio"></i>
       </footer>
     </section>
 </template>
 
 <script>
 import PhotoProfile from '@/components/PhotoProfile.vue'
+import CardMessage from '@/components/CardMessage.vue'
 
 export default {
   name: 'SelectedChat',
@@ -92,6 +39,7 @@ export default {
   },
   components: {
     PhotoProfile,
+    CardMessage
   },
 }
 </script>
@@ -136,6 +84,8 @@ export default {
     scrollbar-width: thin;
     scrollbar-color: #f6f6f6 #A9A9A9;
     max-height: 85vmin;
+    min-height: 85vmin;
+    padding: 5px;
   }
 
   /* Works on Chrome, Edge, and Safari */
