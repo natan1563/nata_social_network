@@ -75,7 +75,7 @@ export default {
     display: grid;
     grid-template-columns: 350px 1fr;
     max-height: 100vmin;
-    max-width: 1950px;
+    max-width: 1920px;
     margin: 10px auto 0 auto;
     background: url('../assets/image/background/bg_chat.svg') repeat top;
     box-shadow: 0 2px 4px rgba(21, 29, 37, 0.3);
@@ -162,7 +162,7 @@ export default {
   .icon:hover {
     transform: scale(1.1);
     box-shadow: 0 1px 3px rgba(10, 20, 30, .3);
-    border: none;
+    outline: none;
   }
 
   /* Chats */
