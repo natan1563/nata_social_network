@@ -1,20 +1,40 @@
 <template>
-  <div class="message">
-    <i class="arrow"></i>
-    <p class="main-text">Texto teste</p>
-    <small class="label-info">12:00</small>
+  <div class="box" :style="{justifyContent: userMessageId === userId ? 'flex-start' : 'flex-end'}">
+    <div class="message">
+      <i class="arrow"></i>
+      <p class="main-text">Texto teste</p>
+      <small class="label-info">12:00</small>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'CardMessage'
+  name: 'CardMessage',
+  data() {
+    return {
+      userId: 99
+    }
+  },
+
+  props: {
+    userMessageId: {
+      type: Number,
+      required: true
+    },
+  },
 }
 </script>
 
 <style scoped>
 * {
   color: #FFF;
+}
+
+.box {
+  max-width: 100%;
+  margin-top: 10px;
+  display: flex;
 }
 
 .message {

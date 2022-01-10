@@ -10,7 +10,12 @@
      </header>
 
       <main>
-        <card-message />
+        <card-message 
+          :userMessageId="99"
+        />
+        <card-message 
+          :userMessageId="15"
+        />
       </main>
 
       <footer>

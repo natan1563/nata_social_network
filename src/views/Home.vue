@@ -73,7 +73,7 @@ export default {
 
   .home {
     display: grid;
-    grid-template-columns: 350px 1fr;
+    grid-template-columns: 450px 1fr;
     max-height: 100vmin;
     max-width: 1920px;
     margin: 10px auto 0 auto;

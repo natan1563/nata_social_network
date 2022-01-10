@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-      <PhotoProfile />
+      <PhotoProfile class="image"/>
       <div class="card-info">
           <div class="label-top">
               <strong class="contact-name">Natã</strong>
@@ -11,11 +11,11 @@
               <p class="last-message">Last message</p>
               <div class="side-group">
                    <circle-icon class="icon">
-                       <img class="pin" :src="require('../assets/image/icons/pin.svg')"/>
+                       <img :src="require('../assets/image/icons/pin.svg')"/>
                    </circle-icon>
 
-                   <circle-icon color="#50c878" class="icon">
-                       <p>12</p>
+                   <circle-icon color="#50c878" class="icon align-middle">
+                       <span>12</span>
                   </circle-icon>
               </div>
           </div>
@@ -38,10 +38,10 @@ export default {
 <style scoped>
     .card {
         display: grid;
-        grid-gap: 10px;
+        grid-gap: 16px;
         grid-template-columns: 40px 1fr;
         background-color: #4F4F4F;
-        padding: 5px;
+        padding: 15px 5px;
         border-radius: 5px;
         cursor: pointer;
     }
@@ -67,18 +67,23 @@ export default {
     }
 
     .icon {
-        margin-left: 2px;
-        position: relative;
+        margin-left: 4px;
+        font-size: 12px;
+    }
+
+    .align-middle {
+        display: flex;
+        align-items: center;
     }
 
     .contact-name {
         color: #FFF;
-        font-size: 14px;
+        font-size: 18px;
     } 
 
     .last-message {
         color: #808080;
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .label-bottom {
@@ -89,11 +94,4 @@ export default {
        align-self: flex-end;
     }
 
-    .pin {
-        max-width: 13px;
-        max-height: 13px;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
 </style>
