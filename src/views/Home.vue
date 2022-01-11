@@ -16,35 +16,11 @@
       </div>
 
       <div class="chats">
-        <card-chat/>
-        <card-chat/>
-        <card-chat/>
-        <card-chat/>
-        <card-chat/>
-        <card-chat/>
-        <card-chat/>
-        <card-chat/>
-        <card-chat/>
-        <card-chat/>
-        <card-chat/>
-        <card-chat/>
-        <card-chat/>
-        <card-chat/>
-        <card-chat/>
-        <card-chat/>
-        <card-chat/>
-        <card-chat/>
-        <card-chat/>
-        <card-chat/>
-        <card-chat/>
-        <card-chat/>
-        <card-chat/>
-        <card-chat/>
-        <card-chat/>
-        <card-chat/>
-        <card-chat/>
-        <card-chat/>
-        <card-chat/>
+        <card-chat
+          v-for="contact in getContactsAvailables"
+          :key="contact.id"
+          :contactData="contact"
+        />
       </div>
     </section>
 
@@ -57,6 +33,7 @@
 import PhotoProfile from '@/components/PhotoProfile.vue'
 import CardChat from '@/components/CardChat.vue'
 import SelectedChat from '@/components/SelectedChat.vue'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'Home',
@@ -64,7 +41,12 @@ export default {
     PhotoProfile,
     CardChat,
     SelectedChat
-  }
+  },
+  computed: {
+    ...mapGetters([
+      'getContactsAvailables'
+    ])
+  },
 }
 </script>
 

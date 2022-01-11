@@ -1,21 +1,24 @@
 <template>
   <div class="card">
-      <PhotoProfile class="image"/>
+      <PhotoProfile 
+        class="image"
+        :source="contactData.profilePhoto"
+      />
       <div class="card-info">
           <div class="label-top">
-              <strong class="contact-name">Natã</strong>
-              <small class="last-message">22:09</small>
+              <strong class="contact-name">{{ contactData.name }}</strong>
+              <small class="hour-last-message">{{ contactData.timestamp | formatHour}}</small>
           </div>
 
           <div class="label-bottom">
-              <p class="last-message">Last message</p>
+              <p class="last-message">{{ contactData.lastMessage }}</p>
               <div class="side-group">
                    <circle-icon class="icon">
                        <img :src="require('../assets/image/icons/pin.svg')"/>
                    </circle-icon>
 
                    <circle-icon color="#50c878" class="icon align-middle">
-                       <span>12</span>
+                       <span>{{ contactData.unverifiedMessages }}</span>
                   </circle-icon>
               </div>
           </div>
@@ -28,9 +31,20 @@ import PhotoProfile from '@/components/PhotoProfile.vue'
 import CircleIcon from './CircleIcon.vue'
 
 export default {
+    props: {
+        contactData: {
+            type: Object,
+            required: true
+        },
+    },
     components: {
         PhotoProfile,
         CircleIcon
+    },
+    filters: {
+        formatHour(hour) {
+            return new Date(hour).toTimeString().slice(0, 5)
+        }
     },
 }
 </script>
@@ -81,8 +95,13 @@ export default {
         font-size: 18px;
     } 
 
-    .last-message {
+    .hour-last-message {
         color: #808080;
+        font-size: 14px;
+    }
+
+    .last-message {
+        color: rgb(206, 205, 205);
         font-size: 14px;
     }
 
