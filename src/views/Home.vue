@@ -56,7 +56,7 @@ export default {
   .home {
     display: grid;
     grid-template-columns: 450px 1fr;
-    max-height: 100vmin;
+    max-height: 99vmin;
     max-width: 1920px;
     margin: 10px auto 0 auto;
     background: url('../assets/image/background/bg_chat.svg') repeat top;

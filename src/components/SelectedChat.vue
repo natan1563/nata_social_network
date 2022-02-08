@@ -6,10 +6,30 @@
             <PhotoProfile/>
             {{ user }}
           </span>
+
+          <transition v-if="searchEnabled" mode="out-in">
+            <input type="text" placeholder="Buscar" class="input-search">
+          </transition>
+          
+          <span>
+            <i id="search" @click="searchEnabled = !searchEnabled"></i>
+          </span>
         </nav>
      </header>
 
       <main>
+        <card-message 
+          :userMessageId="99"
+        />
+        <card-message 
+          :userMessageId="15"
+        />
+        <card-message 
+          :userMessageId="99"
+        />
+        <card-message 
+          :userMessageId="15"
+        />
         <card-message 
           :userMessageId="99"
         />
@@ -39,12 +59,17 @@ export default {
     user: {
       type: String,
       require: true,
-      default: 'Nata' 
+      default: 'Nata'
     }
   },
   components: {
     PhotoProfile,
     CardMessage
+  },
+  data() {
+    return {
+      searchEnabled: false
+    }
   },
 }
 </script>
@@ -86,10 +111,11 @@ export default {
   /* Scroll */
   /* Works on Firefox */
   main {
-    scrollbar-width: thin;
-    scrollbar-color: #f6f6f6 #A9A9A9;
+    scrollbar-width: thin !important;
+    scrollbar-color: #f6f6f6 #A9A9A9 !important;
     max-height: 85vmin;
-    min-height: 85vmin;
+    overflow: auto;
+    height: calc(100vh - 155px);
     padding: 5px;
   }
 
@@ -135,9 +161,17 @@ export default {
     background: url('../assets/image/icons/microphone.svg') no-repeat center center;
   }
 
+  #search {
+    background: url('../assets/image/icons/search.svg') no-repeat center center;
+    background-size: contain;
+    display: block;
+    margin-right: 5px;
+  }
+
   #emote,
   #clip,
-  #microphone {
+  #microphone,
+  #search {
     width: 25px;
     height: 25px;
     cursor: pointer;
@@ -146,11 +180,13 @@ export default {
 
   #emote:hover,
   #clip:hover,
-  #microphone:hover {
+  #microphone:hover,
+  #search:hover {
     transform: scale(1.2);
   }
 
-  .input-message {
+  .input-message,
+  .input-search {
     flex: 1;
     margin: 0 10px;
     border-radius: 5px;
@@ -163,10 +199,29 @@ export default {
     transition: .2s all;
   }
 
+  .input-search {
+    padding: 10px;
+    max-width: 80%;
+    font-size: 14px;
+  }
+
   .input-message:hover,
-  .input-message:focus {
+  .input-message:focus,
+  .input-search:hover,
+  .input-search:focus {
     box-shadow: 0 4px 6px rgba(10, 20, 30, 0.5);
     transform: scaleY(1.2);
     outline: none;
+  }
+
+  .v-enter-active,
+  .v-leave-active {
+    transition: opacity 0.5s ease;
+  }
+
+  .v-enter-from,
+  .v-leave-to {
+    transition: all .3s ease-out;
+    opacity: 0;
   }
 </style>
